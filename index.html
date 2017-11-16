@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+ <head>
+	<title>PROMISE</title>
+	
+ </head>
+ 
+ 
+ <body>
+ 
+   <button id="btnTest" > TEST YOUR PROMISE</button>
+   <div id="log"></div>
+ </body>
+ 
+ 
+ <!-- SCRIPTS DOES NOT NEED START IN THE HEAD -->
+ <script language="javascript">
+	
+			let btn = document.getElementById("btnTest");
+			let log = document.getElementById("log");
+			
+		
+			//promise 
+			function promise(){
+				log.insertAdjacentHTML("beforeend","start")
+				let pro = new Promise (
+				
+				
+					(resolve , reject) => {
+						log.insertAdjacentHTML("beforeend","process")
+						
+						reject(3);
+					
+					}
+					
+				
+				);
+				
+				pro.then (
+				
+					function(val){
+						
+						log.insertAdjacentHTML("beforeend","finished")
+					}
+				
+				).catch(
+					
+					(reason) =>{
+						log.insertAdjacentHTML("beforeend","fail")
+					
+					}
+				
+				);
+			}
+			
+			
+			//event
+			btn.addEventListener("click",promise);
+			
+			
+			
+			
+	</script>
+
+</html>
